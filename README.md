@@ -1,0 +1,1 @@
+Consolidated TFS plugin to combine xlr-tfs2013-plugin, xlr-tfs2015-plugin,  and new work using TFS Java SDK. 
