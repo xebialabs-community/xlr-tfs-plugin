@@ -31,7 +31,32 @@ A field is provided for the Windows CIFS port (default is 445) to allow overridi
 
 The functionality will be enhanced as specific needs materialize.
 
-### Example configuration
+## TFS REST API
+
+This plugin offers an interface from XL Release to Team Foundation Server via the REST API valid for work items in TFS 2015.  It provides a createWorkItem.py script that creates a Work Item given Collection, Project, Type and Title parameters.
+
+The functionality will be enriched with additional Work Item fields as specific needs materialize.
+
+Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See https://github.com/droberts2013/xl-release/server/src/main/resources/pythonutil/HttpRequest.py if necessary.  Place this custom file in <xl-release-server>/ext/pythonutil.
+
+## TFS SDK
+
+The TFS SDK depends on the following configuration changes in XL Release:
+
+Script.policy file — confirm these lines:
+
+permission  java.util.PropertyPermission "\*", "read, write";
+permission java.lang.RuntimePermission "shutdownHooks";
+permission java.io.FilePermission "conf/\*", "read";
+permission java.io.FilePermission "lib/\*", "read";
+permission java.io.FilePermission "plugins/\*", "read";
+permission java.security.AllPermission;
+
+Add the library com.microsoft.tfs.sdk-11.0.0.jar to /lib.
+
+Unzip native.zip in the <xl-release-server>/conf directory. 
+
+### Example configuration, TFPT
 
 Here is a basic workflow of four items to create a Work Item, then retrieve it, update it, and retrieve it again to see the modification.
 
@@ -61,27 +86,3 @@ Successful execution of the release results in the following output:
 
 ![screenshot of createWorkItem output](screenshots/xlr-tfs2013-plugin-9.png)
 
-## TFS REST API
-
-This plugin offers an interface from XL Release to Team Foundation Server via the REST API valid for work items in TFS 2015.  It provides a createWorkItem.py script that creates a Work Item given Collection, Project, Type and Title parameters.
-
-The functionality will be enriched with additional Work Item fields as specific needs materialize.
-
-Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See https://github.com/droberts2013/xl-release/server/src/main/resources/pythonutil/HttpRequest.py if necessary.  Place this custom file in <xl-release-server>/ext/pythonutil.
-
-## TFS SDK
-
-The TFS SDK depends on the following configuration changes in XL Release:
-
-1.  Script.policy file — confirm these lines:
-
-permission  java.util.PropertyPermission "\*", "read, write";
-permission java.lang.RuntimePermission "shutdownHooks";
-permission java.io.FilePermission "conf/\*", "read";
-permission java.io.FilePermission "lib/\*", "read";
-permission java.io.FilePermission "plugins/\*", "read";
-permission java.security.AllPermission;
-
-2. Add the library com.microsoft.tfs.sdk-11.0.0.jar to /lib.
-
-3.  Unzip native.zip in the <xl-release-server>/conf directory. 
