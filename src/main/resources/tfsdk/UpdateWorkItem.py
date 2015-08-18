@@ -1,3 +1,9 @@
+#
+# THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+# FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+#
+
 # UpdateWorkItem
 
 # tfsUrl from server object
@@ -5,7 +11,7 @@
 # password from server object
 # collectionName = input variable defined in synthetic
 # teamProjectName = input variable defined in synthetic
-# workItemNumber = input variable, integer, defined in synthetic
+# workItemId = input variable defined in synthetic
 # workItemTitle = input variable defined in synthetic
 
 import sys
@@ -39,7 +45,7 @@ project = tpc.getWorkItemClient().getProjects().get(teamProjectName)
 
 workItemClient = project.getWorkItemClient()
 
-workItem = workItemClient.getWorkItemByID(int(workItemNumber))
+workItem = workItemClient.getWorkItemByID(int(workItemId))
 
 workItem.setTitle(workItemTitle)
 workItem.save()
