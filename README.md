@@ -33,7 +33,11 @@ The functionality will be enhanced as specific needs materialize.
 
 ## TFS REST API
 
-This plugin offers an interface from XL Release to Team Foundation Server via the REST API valid for work items in TFS 2015.  It provides a createWorkItem.py script that creates a Work Item given Collection, Project, Type and Title parameters.
+This plugin offers an interface from XL Release to Team Foundation Server via the REST API valid for work items in TFS 2015.  It provides:
+
+**createWorkItem.py** -- creates a Work Item given Collection, Project, Type and Title parameters
+
+**getTfsRepoArtifacts.py** -- retrieves an item from a TFS Git repository given the collection and scopepath (assumes a single repository and a single match)
 
 The functionality will be enriched with additional Work Item fields as specific needs materialize.
 
