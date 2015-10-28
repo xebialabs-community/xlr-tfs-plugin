@@ -41,7 +41,7 @@ This plugin offers an interface from XL Release to Team Foundation Server via th
 
 The functionality will be enriched with additional Work Item fields as specific needs materialize.
 
-Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See https://github.com/droberts2013/xl-release/server/src/main/resources/pythonutil/HttpRequest.py if necessary.  Place this custom file in <xl-release-server>/ext/pythonutil.
+Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See [droberts2013/xl-release/server/src/main/resources/pythonutil/HttpRequest.py](https://github.com/droberts2013/xl-release/blob/afc1468c9fde54d03f046211fbc1b9e1068106c1/server/src/main/resources/pythonutil/HttpRequest.py) if necessary.  Place this custom file in <xl-release-server>/ext/pythonutil.
 
 ## TFS SDK
 
