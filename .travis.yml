@@ -3,7 +3,7 @@ deploy:
   provider: releases
   api_key:
     secure: GUBb6VNOyPsgBHnNTTl9tltXBjuZMtmS5vBtFI4i7fiVXGfTaEZHh2QtmptOpGZrVKOaiAy4s4571bd8j5hjdLUuLPTrgZqwFc9urA7dgY7Vf4uxYXylQFg9O1q+FxDN9O9fFErhi3Do4aZd9zhqJA7kRLT4eJjcGibfHvyxEmcGFzrcU+vo3nwflLgQ0PT1IjBr95lBN3H8xLzpBoI/Ho223D6/x4A3/tUlwK8MAl40PJ5NzW6WqX8RwU/GLW7BWJ1+Tm/yRpn7BrKvfvXsO4Cp/exEzQh6iP7jCSaWlZ+X6WLQE2HD5b3mfqrfh6qwZ8RsQEXa0fP+guWiUOZg51jQWHDNZrmIpjJVVLBCZQGLQPUDFIamgQZbPwOBwkQKcB3WVJQwFTBRlW4yYk0csAXfN3QSiHBX0aipnqcmRc8pJW02oHwsjKSji928VAH+Kv6Aoqz52ZvRr4xQBkq3JR+wxl+Nfxtly8MUO0pSTSTGlt/9P8V7cPKUIScWk/uduPxk4aYXVbF03jVdmHwXCYPV4ImtvxGodcGDdjxLTBz7VZjQvDwUy0LilD8pnzv4g2uQ0CvjCBalP7j6Zz+FoVCumVGRjBbEdOalcgaxx/IJPfdJ91AyRBzAwuynngBnJPrObfg31TkfPK7HRTp8zLTl5fAea5ZUssxLM6dg9RA=
-  file: build/libs/xlr-tfs-plugin-1.0.0.jar
+  file: build/libs/xlr-tfs-plugin-1.0.2.jar
   on:
     all_branches: true
     tags: true
