@@ -17,7 +17,8 @@ contentType = 'application/json-patch+json'
 
 request = HttpRequest(tfsServer)
 content = '[{"path": "/fields/System.Title", "value": "%s", "op": "add"}]' % workItemTitle
-response = request.patch('tfs/%s/%s/_apis/wit/workitems/$%s?api-version=1.0' % (collectionName, teamProjectName, workItemType), content, contentType=contentType)
+# define TFS Server url as http://server:port/tfs
+response = request.patch('%s/%s/_apis/wit/workitems/$%s?api-version=1.0' % (collectionName, teamProjectName, workItemType), content, contentType=contentType)
 httpStatusCode = response.status
 print httpStatusCode
 print response.response
