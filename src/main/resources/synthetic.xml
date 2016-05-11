@@ -15,7 +15,7 @@
 	<type type="tfpt.CreateWorkItem" extends="remoteScript.Windows">
 		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
 		<property name="taskColor" hidden="true" default="#68217a" />
-		<property name="cifsPort" type="integer" category="input" default="445" />
+		<property name="cifsPort" kind="integer" category="input" default="445" />
 		<property name="remotePath" category="input" default="C:\xlr-tfs2013-plugin" />
 		<property name="script" category="input" default="CreateWorkItem.bat &quot;${project}&quot; &quot;${type}&quot; &quot;${collection}&quot; &quot;${title}&quot; &quot;${assignedTo}&quot; &quot;${description}&quot;" />
 		<property name="workItemId" category="output" />
@@ -24,7 +24,7 @@
 	<type type="tfpt.GetWorkItem" extends="remoteScript.Windows">
 		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
 		<property name="taskColor" hidden="true" default="#68217a" />
-		<property name="cifsPort" type="integer" category="input" default="445" />
+		<property name="cifsPort" kind="integer" category="input" default="445" />
 		<property name="remotePath" category="input" default="C:\xlr-tfs2013-plugin" />
 		<property name="script" category="input" default="GetWorkItem.bat &quot;${workItemId}&quot; &quot;${collection}&quot;" />
 	</type>
@@ -32,7 +32,7 @@
 	<type type="tfpt.UpdateWorkItem" extends="remoteScript.Windows">
 		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
 		<property name="taskColor" hidden="true" default="#68217a" />
-		<property name="cifsPort" type="integer" category="input" default="445" />
+		<property name="cifsPort" kind="integer" category="input" default="445" />
 		<property name="remotePath" category="input" default="C:\xlr-tfs2013-plugin" />
 		<property name="script" category="input" default="UpdateWorkItem.bat &quot;${workItemId}&quot; &quot;${collection}&quot; &quot;${fields}&quot;" />
 	</type>
