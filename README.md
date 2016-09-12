@@ -4,6 +4,21 @@ This plugin offers an interface from XL Release to Team Foundation Server to cre
 
 Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the TFS SDK.
 
+# CI status #
+
+[![Build Status][xlr-tfs-plugin-travis-image]][xlr-tfs-plugin-travis-url]
+[![Codacy Badge][xlr-tfs-plugin-codacy-image] ][xlr-tfs-plugin-codacy-url]
+[![Code Climate][xlr-tfs-plugin-code-climate-image] ][xlr-tfs-plugin-code-climate-url]
+
+[xlr-tfs-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xlr-tfs-plugin.svg?branch=master
+[xlr-tfs-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xlr-tfs-plugin
+[xlr-tfs-plugin-codacy-image]: https://api.codacy.com/project/badge/Grade/b11c699b6164409a93e9cfc8ee318016
+[xlr-tfs-plugin-codacy-url]: https://www.codacy.com/app/joris-dewinne/xlr-tfs-plugin
+[xlr-tfs-plugin-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xlr-tfs-plugin/badges/gpa.svg
+[xlr-tfs-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xlr-tfs-plugin
+
+
+
 ## Team Foundation Power Tools
 The following actions are supported:
 
