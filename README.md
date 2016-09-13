@@ -25,17 +25,17 @@ The following actions are supported:
 ### CreateWorkItem
 The CreateWorkItem.py script creates a new Work Item by executing a remote Windows batch wrapper script, CreateWorkItems.bat.  Input parameters are Project, Type, Collection, Title, AssignedTo, and Description; the script returns the number of the Work Item created.  
 
-![screenshot of createWorkItem](screenshots/xlr-tfs2013-plugin-2.png)
+![screenshot of createWorkItem](images/xlr-tfs2013-plugin-2.png)
 
 ### GetWorkItem
 The GetWorkItem.py script retrieves a Work Item given its number and collection using the GetWorkItem.bat wrapper script.  Input parameters are workItemNumber and collection.
 
-![screenshot of getWorkItem](screenshots/xlr-tfs2013-plugin-3.png)
+![screenshot of getWorkItem](images/xlr-tfs2013-plugin-3.png)
 
 ### UpdateWorkItem
 The UpdateWorkItem.py script updates a Work Item given its number, collection, and set of update fields and values in the format `fieldname1=value1;fieldname2=value2`.  See an example of setting `State=Done` at the end of this document.
 
-![screenshot of updateWorkItem](screenshots/xlr-tfs2013-plugin-4.png)
+![screenshot of updateWorkItem](images/xlr-tfs2013-plugin-4.png)
 
 ### Notes:  
 The TFS machine must have Microsoft Visual Studio Team Foundation Server 2013 Update 2 Power Tools installed.  
@@ -79,11 +79,11 @@ Unzip native.zip in the <xl-release-server>/conf directory.
 
 Here is a basic workflow of four items to create a Work Item, then retrieve it, update it, and retrieve it again to see the modification.
 
-![screenshot of release template](screenshots/xlr-tfs2013-plugin-1.png)
+![screenshot of release template](images/xlr-tfs2013-plugin-1.png)
 
 The variables appearing in the above screenshots are set in this manner:
 
-![screenshot of release variables](screenshots/xlr-tfs2013-plugin-5.png)
+![screenshot of release variables](images/xlr-tfs2013-plugin-5.png)
 
 Note that workItemNumber is set as an output variable by the createWorkItem task.
 
@@ -91,17 +91,17 @@ Successful execution of the release results in the following output:
 
 **Create Work Item**
 
-![screenshot of createWorkItem output](screenshots/xlr-tfs2013-plugin-6.png)
+![screenshot of createWorkItem output](images/xlr-tfs2013-plugin-6.png)
 
 **Get Work Item, note State=New**
 
-![screenshot of createWorkItem output](screenshots/xlr-tfs2013-plugin-7.png)
+![screenshot of createWorkItem output](images/xlr-tfs2013-plugin-7.png)
 
 **Update Work Item**
 
-![screenshot of createWorkItem output](screenshots/xlr-tfs2013-plugin-8.png)
+![screenshot of createWorkItem output](images/xlr-tfs2013-plugin-8.png)
 
 **Get Work Item, note State=Done**
 
-![screenshot of createWorkItem output](screenshots/xlr-tfs2013-plugin-9.png)
+![screenshot of createWorkItem output](images/xlr-tfs2013-plugin-9.png)
 
