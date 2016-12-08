@@ -42,12 +42,23 @@
 		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
 		<property name="taskColor" hidden="true" default="#68217a" />
 		<property name="tfsServer" category="input" label="Server" referenced-type="tfs.Server" kind="ci" />
-		<property name="collectionName" category="input" />
+		<property name="collectionName" category="input" default="DefaultCollection"/>
 		<property name="teamProjectName" category="input" />
 		<property name="workItemType" category="input" />
 		<property name="workItemTitle" category="input" />
+		<property name="workItemDescription" category="input" />
 		<property name="httpStatusCode" category="output" />
+		<property name="workItemId" category="output" />
 	</type>
+	<type type="tfsrest.AddWorkItemComment" extends="xlrelease.PythonScript">
+		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
+		<property name="taskColor" hidden="true" default="#68217a" />
+		<property name="tfsServer" category="input" label="Server" referenced-type="tfs.Server" kind="ci" />
+		<property name="collectionName" category="input" default="DefaultCollection"/>
+		<property name="workItemComment" category="input" />
+		<property name="workItemId" category="input" />
+	</type>
+
 	<type type="tfsrest.GetTfsRepoArtifacts" extends="xlrelease.PythonScript">
 		<property name="scriptLocation" default="tfsrest/GetTfsRepoArtifacts.py" hidden="true" />
 		<property name="iconLocation" default="tfs/tfs.png" hidden="true" />
