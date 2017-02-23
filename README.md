@@ -22,7 +22,7 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 + Custom Http client: [HttpRequest.py](src/main/resources/pythonutil/HttpRequest.py)
   This should go under `ext/pythonutil`
 + Additional lib: https://www.microsoft.com/en-us/download/confirmation.aspx?id=22616
-  This contains a file called: com.microsoft.tfs.sdk-11.0.0.jar which should be placed under `plugins`.
+  This contains a file called: `com.microsoft.tfs.sdk-11.0.0.jar` which should be placed under `plugins`.
 
 
 ## Team Foundation Power Tools
