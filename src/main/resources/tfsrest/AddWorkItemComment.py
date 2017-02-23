@@ -14,7 +14,7 @@ if tfsServer is None:
 
 contentType = 'application/json-patch+json'
 
-request = HttpRequest(tfsServer)
+request = HttpRequest(tfsServer, username, password)
 comment_json = '{"path": "/fields/System.History", "value": "%s", "op": "add"}' % workItemComment
 content = '[%s]' % (comment_json)
 # define TFS Server url as http://server:port/tfs

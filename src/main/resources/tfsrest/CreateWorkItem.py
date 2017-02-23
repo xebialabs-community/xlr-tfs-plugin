@@ -15,7 +15,7 @@ if tfsServer is None:
 
 contentType = 'application/json-patch+json'
 
-request = HttpRequest(tfsServer)
+request = HttpRequest(tfsServer, username, password)
 title_json = '{"path": "/fields/System.Title", "value": "%s", "op": "add"}' % workItemTitle
 description_json = '{"path": "/fields/System.Description", "value": "%s", "op": "add"}' % workItemDescription
 content = '[%s, %s]' % (title_json, description_json)

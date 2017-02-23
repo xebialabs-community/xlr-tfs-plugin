@@ -19,9 +19,7 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
-+ Custom Http client: [HttpRequest.py](src/main/resources/pythonutil/HttpRequest.py)
-  This should go under `ext/pythonutil`
-+ Additional lib: https://www.microsoft.com/en-us/download/confirmation.aspx?id=22616
++ Additional lib (when using sdk): https://www.microsoft.com/en-us/download/confirmation.aspx?id=22616
   This contains a file called: `com.microsoft.tfs.sdk-11.0.0.jar` which should be placed under `plugins`.
 
 
@@ -64,7 +62,7 @@ This plugin offers an interface from XL Release to Team Foundation Server via th
 
 The functionality will be enriched with additional Work Item fields as specific needs materialize.
 
-Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See [droberts2013/xl-release/server/src/main/resources/pythonutil/HttpRequest.py](https://github.com/droberts2013/xl-release/blob/afc1468c9fde54d03f046211fbc1b9e1068106c1/server/src/main/resources/pythonutil/HttpRequest.py) if necessary.  Place this custom file in <xl-release-server>/ext/pythonutil.
+Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See https://github.com/xebialabs-community/xlr-tfs-plugin/commit/976c42400ee6d68a08a5f02f03b18730183e21c8 if necessary.  Place this custom file in `<xl-release-server>/ext/pythonutil`.
 
 ## TFS SDK
 

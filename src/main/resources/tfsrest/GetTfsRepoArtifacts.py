@@ -14,31 +14,23 @@ if tfsServer is None:
   print "No server provided"
   sys.exit(1)
 
-request = HttpRequest(tfsServer)
-if username:
-  request.username = username
-if password:
-  request.password = password
-
-#contentType = "application/octet-stream"
-
+request = HttpRequest(tfsServer, username, password)
 response = request.get('%s/_apis/git/repositories?api-version=1.0' % collectionName)
 
 if not response.isSuccessful():
   raise Exception("Error in getting repositories. Server return [%s], with content [%s]" % (response.status, response.response))
 
-repositoryId = json.loads(response.response)['value'][0]['id']
-print "Repository id is %s" % repositoryId
+repository_id = json.loads(response.response)['value'][0]['id']
+print "Repository id is %s" % repository_id
 
-response = request.get('%s/_apis/git/repositories/%s/items?api-version=1.0&scopepath=%s' % (collectionName,repositoryId, scopePath))
+response = request.get('%s/_apis/git/repositories/%s/items?api-version=1.0&scopepath=%s' % (collectionName, repository_id, scopePath))
 
-if response.isSuccessful():
-  if artifactTempDir is None or artifactTempDir == "":
+if not response.isSuccessful():
+    raise Exception("Error in getting repository item(s). Server return [%s], with content [%s]" % (response.status, response.response))
+
+if artifactTempDir is None or artifactTempDir == "":
     artifactTempDir = mkdtemp()
-  tempFile = open (artifactTempDir + "/" + scopePath, "w")
-  tempFile.write(response.response)
-  tempFile.close()
-  print "Successful retrieval of %s to %s" % (scopePath, artifactTempDir) 
-else:
-  print "Error in getting repository item(s)"
-  sys.exit(1)
+temp_file = open (artifactTempDir + "/" + scopePath, "w")
+temp_file.write(response.response)
+temp_file.close()
+print "Successful retrieval of %s to %s" % (scopePath, artifactTempDir)
