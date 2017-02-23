@@ -16,7 +16,7 @@ if tfsServer is None:
 
 request = HttpRequest(tfsServer)
 if username:
-	request.username = username
+  request.username = username
 if password:
   request.password = password
 
@@ -24,14 +24,11 @@ if password:
 
 response = request.get('%s/_apis/git/repositories?api-version=1.0' % collectionName)
 
-httpStatusCode = response.status
+if not response.isSuccessful():
+  raise Exception("Error in getting repositories. Server return [%s], with content [%s]" % (response.status, response.response))
 
-if response.isSuccessful():
-  repositoryId = json.loads(response.response)['value'][0]['id']
-  print "Repository id is %s" % repositoryId
-else:
-  print "Error in getting repositories"
-  sys.exit(1)
+repositoryId = json.loads(response.response)['value'][0]['id']
+print "Repository id is %s" % repositoryId
 
 response = request.get('%s/_apis/git/repositories/%s/items?api-version=1.0&scopepath=%s' % (collectionName,repositoryId, scopePath))
 

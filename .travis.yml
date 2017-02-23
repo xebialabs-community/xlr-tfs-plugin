@@ -3,7 +3,7 @@ deploy:
   provider: releases
   api_key:
     secure: CmkIWOhshU9wGtopnJZMtP/cIvCGR4WcOelOgSwtpu5UiMlbhmqTIQnHNOASe5kytmv3jleuC9PzzBYM7Dp4PMHs4lP5QbKLB+O6GQ40dPL7OL56DinCv9DBbTLXn57bz69GZwyxbGEumg6S8Zt5nA0H0D9tq41J2p8M65hjIxKNm5MGeNvdHA5Z7PZvZsxbjIvkvVj9/ySmN4phbVk1hh3TJefd273gDJ/CtSb1yNGqIXiolnP+GEwxXn82bJynWg3KUXI659cT74vrZiMGpmt4r8RSvz1YZyzW2aCgSigVpmrwSm+r7kwZ4MGySXTp6tYY66uR8mJnNgVNzOZco9FExb/m7T/H06okERq9uxC7X5zcvYRvnJx1XesJcdgN6ctRaR2ynglh8wpJQfNG74IZhm0MXUpJ5e4A1gFdKMShjS81MP78LYe0bGs5sAdnDKZe3moj+eXgpSbUh22eDud87xOZPKNodnQvgjQZPZWwSOiiP+WNFDWY7T/lhcDW/yPTR6Mq7eCdn54EE+zzJQ9C8fPCmagypbTW6+BDOF2wB+whIAd5ysgWi7WdM8v3WAjXd9VXXpHpeU42r/Lr0L3BMMuf4L1Z0Y66FIjIXKNXYa7WocSuaCdC6oKucBugcRg5OxFZarWyj1HQei9mhTQYTw+tWb9Y3DdO3M43t84=
-  file: build/libs/xlr-tfs-plugin-1.0.4.jar
+  file: build/libs/xlr-tfs-plugin-1.0.5.jar
   skip_cleanup: true
   on:
     all_branches: true
