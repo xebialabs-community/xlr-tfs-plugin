@@ -19,7 +19,7 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
-+ Custom Http client: https://github.com/droberts2013/xl-release/blob/afc1468c9fde54d03f046211fbc1b9e1068106c1/server/src/main/resources/pythonutil/HttpRequest.py
++ Custom Http client: [HttpRequest.py](src/main/resources/pythonutil/HttpRequest.py)
   This should go under `ext/pythonutil`
 + Additional lib: https://www.microsoft.com/en-us/download/confirmation.aspx?id=22616
   This contains a file called: com.microsoft.tfs.sdk-11.0.0.jar which should be placed under `plugins`.
