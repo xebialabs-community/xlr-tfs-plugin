@@ -19,8 +19,8 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
-+ Additional lib (when using sdk): https://www.microsoft.com/en-us/download/confirmation.aspx?id=22616
-  This contains a file called: `com.microsoft.tfs.sdk-11.0.0.jar` which should be placed under `plugins`.
++ Additional config (when using sdk): https://www.microsoft.com/en-us/download/details.aspx?id=22616
+  For configuration see this [section](https://github.com/xebialabs-community/xlr-tfs-plugin#tfs-sdk)
 
 
 ## Team Foundation Power Tools
@@ -70,14 +70,16 @@ The TFS SDK depends on the following configuration changes in XL Release:
 
 Script.policy file — confirm these lines:
 
+```
 permission  java.util.PropertyPermission "\*", "read, write";
 permission java.lang.RuntimePermission "shutdownHooks";
 permission java.io.FilePermission "conf/\*", "read";
 permission java.io.FilePermission "lib/\*", "read";
 permission java.io.FilePermission "plugins/\*", "read";
 permission java.security.AllPermission;
+```
 
-Add the library com.microsoft.tfs.sdk-11.0.0.jar to /lib.
+Add the library com.microsoft.tfs.sdk-11.0.0.jar to /plugins.
 
 Unzip native.zip in the <xl-release-server>/conf directory. 
 
@@ -111,3 +113,6 @@ Successful execution of the release results in the following output:
 
 ![screenshot of createWorkItem output](images/xlr-tfs2013-plugin-9.png)
 
+
+## References ##
++ [TFS Rest api](https://www.visualstudio.com/en-us/docs/integrate/api/overview)

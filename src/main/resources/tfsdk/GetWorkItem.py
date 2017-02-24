@@ -20,10 +20,6 @@ from java.lang import System
 from com.microsoft.tfs.core.httpclient import UsernamePasswordCredentials
 from com.microsoft.tfs.core.util import URIUtils
 from com.microsoft.tfs.core import TFSTeamProjectCollection
-from com.microsoft.tfs.core.clients.workitem import CoreFieldReferenceNames
-from com.microsoft.tfs.core.clients.workitem import WorkItem
-from com.microsoft.tfs.core.clients.workitem import WorkItemClient
-from com.microsoft.tfs.core.clients.workitem.project import Project
 
 if tfsServer is None:
   print "No server provided"
@@ -34,9 +30,9 @@ System.setProperty("com.microsoft.tfs.jni.native.base-directory", os.getcwd() + 
 collectionUrl = tfsServer['url'] + "/" + collectionName
 
 if username is None:
-	username = tfsServer['username']
+    username = tfsServer['username']
 if password is None:
-	password = tfsServer['password']
+    password = tfsServer['password']
 credentials = UsernamePasswordCredentials(username, password)
 
 tpc = TFSTeamProjectCollection(URIUtils.newURI(collectionUrl), credentials)

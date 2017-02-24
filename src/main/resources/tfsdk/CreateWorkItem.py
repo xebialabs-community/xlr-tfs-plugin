@@ -5,15 +5,11 @@
 #
 
 import os, sys, string, time
-import com.xhaus.jyson.JysonCodec as json
 from java.lang import System
 from com.microsoft.tfs.core.httpclient import UsernamePasswordCredentials
 from com.microsoft.tfs.core.util import URIUtils
 from com.microsoft.tfs.core import TFSTeamProjectCollection
 from com.microsoft.tfs.core.clients.workitem import CoreFieldReferenceNames
-from com.microsoft.tfs.core.clients.workitem import WorkItem
-from com.microsoft.tfs.core.clients.workitem.project import Project
-from com.microsoft.tfs.core.clients.workitem.wittype import WorkItemType
 
 # load the <XL_RELEASE>/conf/native files
 System.setProperty("com.microsoft.tfs.jni.native.base-directory", os.getcwd() + "/conf/native")
