@@ -98,4 +98,12 @@
 		<property name="workItemTitle" category="input" />
 	</type>
 
+    <type type="tfsdk.QueueBuild" extends="tfs.VirtualTask">
+        <property name="teamProjectName" category="input" />
+        <property name="buildDefinitionName" category="input" />
+
+        <property name="buildNumber" kind="integer" category="output" />
+        <property name="buildStatus" kind="string" category="output" />
+    </type>
+
 </synthetic>
