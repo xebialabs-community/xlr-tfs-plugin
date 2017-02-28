@@ -11,6 +11,13 @@
 	<!-- Common items -->
 	<type type="tfs.Server" extends="configuration.HttpConnection">
         <property name="scriptLocation" default="tfsrest/TestConnection.py" hidden="true" />
+        <property name="domain" label="Domain" description="Domain to be used for NTLM authentication" required="false" />
+        <property name="authenticationMethod" label="Authentication Method" kind="enum" required="true">
+            <enum-values>
+                <value>Basic</value>
+                <value>Ntlm</value>
+            </enum-values>
+        </property>
     </type>
 	
 	<!-- TFS POWER TOOLS -->
@@ -46,6 +53,7 @@
 		<property name="tfsServer" category="input" label="Server" referenced-type="tfs.Server" kind="ci" />
 		<property name="username" category="input" required="false" />
 		<property name="password" category="input" password="true" required="false" />
+        <property name="domain" category="input" required="false" />
 
 		<property name="collectionName" category="input" default="DefaultCollection" />
 	</type>
@@ -69,7 +77,7 @@
 		<property name="artifactTempDir" category="input" />
     </type>
 
-    <type type="tfsrest.QueueBuild" extends="tfs.VirtualTask">
+    <type type="tfsrest.QueueBuild" extends="tfs.VirtualTask" description="Queuing a TFS build">
         <property name="teamProjectName" category="input" />
         <property name="buildDefinitionName" category="input" />
 
@@ -98,7 +106,7 @@
 		<property name="workItemTitle" category="input" />
 	</type>
 
-    <type type="tfsdk.QueueBuild" extends="tfs.VirtualTask">
+    <type type="tfsdk.QueueBuild" extends="tfs.VirtualTask" description="Queuing a TFS build (only works for xaml based builds).">
         <property name="teamProjectName" category="input" />
         <property name="buildDefinitionName" category="input" />
 

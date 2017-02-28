@@ -5,8 +5,9 @@
 #
 
 import json, sys, time
+from xlrhttp.HttpRequest import HttpRequest
 
-print "Executing QueueBuild.py"
+print "Executing QueueBuild"
 
 if tfsServer is None:
     print "No server provided"
@@ -14,13 +15,13 @@ if tfsServer is None:
 
 contentType = 'application/json'
 
-request = HttpRequest(tfsServer, username, password)
+request = HttpRequest(tfsServer, username, password, domain)
 
 response = request.get('%s/%s/_apis/build/definitions?api-version=2.0&name=%s' % (collectionName, teamProjectName, buildDefinitionName))
 
 if not response.isSuccessful():
     raise Exception("Error fetching build definition. Server return [%s], with content [%s]" % (response.status, response.response))
-
+print response.response
 json_response = json.loads(response.getResponse())
 if json_response["count"] != 1:
     raise Exception("Error fetching build definition. Server return [%s], with content [%s]" % (response.status, response.response))

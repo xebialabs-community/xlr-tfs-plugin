@@ -5,8 +5,9 @@
 #
 
 import sys
+from xlrhttp.HttpRequest import HttpRequest
 
-print "Executing CreateWorkItem.py ver 2015Jun28-1"
+print "Executing CreateWorkItem"
 
 if tfsServer is None:
   print "No server provided"
@@ -14,7 +15,7 @@ if tfsServer is None:
 
 contentType = 'application/json-patch+json'
 
-request = HttpRequest(tfsServer, username, password)
+request = HttpRequest(tfsServer, username, password, domain)
 comment_json = '{"path": "/fields/System.History", "value": "%s", "op": "add"}' % workItemComment
 content = '[%s]' % (comment_json)
 # define TFS Server url as http://server:port/tfs

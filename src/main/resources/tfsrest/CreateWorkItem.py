@@ -6,8 +6,9 @@
 
 import sys
 import com.xhaus.jyson.JysonCodec as json
+from xlrhttp.HttpRequest import HttpRequest
 
-print "Executing CreateWorkItem.py ver 2015Jun28-1"
+print "Executing CreateWorkItem"
 
 if tfsServer is None:
   print "No server provided"
@@ -15,7 +16,7 @@ if tfsServer is None:
 
 contentType = 'application/json-patch+json'
 
-request = HttpRequest(tfsServer, username, password)
+request = HttpRequest(tfsServer, username, password, domain)
 title_json = '{"path": "/fields/System.Title", "value": "%s", "op": "add"}' % workItemTitle
 description_json = '{"path": "/fields/System.Description", "value": "%s", "op": "add"}' % workItemDescription
 content = '[%s, %s]' % (title_json, description_json)

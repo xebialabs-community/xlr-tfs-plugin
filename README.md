@@ -60,9 +60,10 @@ This plugin offers an interface from XL Release to Team Foundation Server via th
 
 **GetTfsRepoArtifacts.py** -- retrieves an item from a TFS Git repository given the collection and scopepath (assumes a single repository and a single match)
 
+**QueueBuild.py** -- Queue a build using the REST api.
+
 The functionality will be enriched with additional Work Item fields as specific needs materialize.
 
-Note:  HttpRequest.py in older versions of XL Release must be enhanced to support the HTTP PATCH method.  See https://github.com/xebialabs-community/xlr-tfs-plugin/commit/976c42400ee6d68a08a5f02f03b18730183e21c8 if necessary.  Place this custom file in `<xl-release-server>/ext/pythonutil`.
 
 ## TFS SDK
 

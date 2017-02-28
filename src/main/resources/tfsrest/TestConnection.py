@@ -3,9 +3,11 @@
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
 # FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 #
+import sys
+from xlrhttp.HttpRequest import HttpRequest
 
 # get the configuration properties from the UI
-params = { 'url': configuration.url, 'username' : configuration.username, 'password': configuration.password,  'proxyHost': configuration.proxyHost, 'proxyPort': configuration.proxyPort }
+params = { 'url': configuration.url, 'username' : configuration.username, 'password': configuration.password,  'proxyHost': configuration.proxyHost, 'proxyPort': configuration.proxyPort, 'domain': configuration.domain, 'authenticationMethod': configuration.authenticationMethod}
 
 # do an http request to the server
 response = HttpRequest(params).get('/_apis/projectcollections', contentType = 'application/json')

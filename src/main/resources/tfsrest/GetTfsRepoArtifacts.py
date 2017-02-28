@@ -7,14 +7,15 @@
 import sys
 import com.xhaus.jyson.JysonCodec as json
 from tempfile import mkdtemp
+from xlrhttp.HttpRequest import HttpRequest
 
-print "Executing GetTfsRepoArtifacts.py"
+print "Executing GetTfsRepoArtifacts"
 
 if tfsServer is None:
   print "No server provided"
   sys.exit(1)
 
-request = HttpRequest(tfsServer, username, password)
+request = HttpRequest(tfsServer, username, password, domain)
 response = request.get('%s/_apis/git/repositories?api-version=1.0' % collectionName)
 
 if not response.isSuccessful():
