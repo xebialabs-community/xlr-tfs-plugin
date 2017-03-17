@@ -7,6 +7,7 @@
 import os, sys, string, time
 from java.lang import System
 from com.microsoft.tfs.core.httpclient import UsernamePasswordCredentials
+from com.microsoft.tfs.core.httpclient import NTCredentials
 from com.microsoft.tfs.core.util import URIUtils
 from com.microsoft.tfs.core import TFSTeamProjectCollection
 from com.microsoft.tfs.core.clients.workitem import CoreFieldReferenceNames
@@ -22,8 +23,12 @@ if username is None:
     username = tfsServer['username']
 if password is None:
     password = tfsServer['password']
-
-credentials = UsernamePasswordCredentials(username, password)
+if tfsServer['authenticationMethod'] == 'Ntlm':
+    if domain is None:
+        domain = tfsServer['domain']
+    credentials = NTCredentials(username, domain, password)
+else:
+    credentials = UsernamePasswordCredentials(username, password)
 
 tfsAPIUrl = tfsServer['url'] + "/" + collectionName
 print "Generating Work Items in TFS instance via this REST API: %s\r" % (tfsAPIUrl)

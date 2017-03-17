@@ -10,12 +10,19 @@
 	
 	<!-- Common items -->
 	<type type="tfs.Server" extends="configuration.HttpConnection">
-        <property name="scriptLocation" default="tfsrest/TestConnection.py" hidden="true" />
+        <property name="scriptLocation" default="TestConnection.py" hidden="true" />
         <property name="domain" label="Domain" description="Domain to be used for NTLM authentication" required="false" />
         <property name="authenticationMethod" label="Authentication Method" kind="enum" required="true">
             <enum-values>
                 <value>Basic</value>
                 <value>Ntlm</value>
+            </enum-values>
+        </property>
+		<property name="preferredLibType" label="Preferred Library for Connectivity" description="SDK for versions 2010-2013, REST for 2013 and above, CLI for older" kind="enum" required="true">
+            <enum-values>
+                <value>SDK</value>
+                <value>REST</value>
+                <value>CLI</value>
             </enum-values>
         </property>
     </type>

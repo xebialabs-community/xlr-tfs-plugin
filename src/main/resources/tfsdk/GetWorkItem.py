@@ -18,6 +18,7 @@ import sys
 import os
 from java.lang import System
 from com.microsoft.tfs.core.httpclient import UsernamePasswordCredentials
+from com.microsoft.tfs.core.httpclient import NTCredentials
 from com.microsoft.tfs.core.util import URIUtils
 from com.microsoft.tfs.core import TFSTeamProjectCollection
 
@@ -33,7 +34,12 @@ if username is None:
     username = tfsServer['username']
 if password is None:
     password = tfsServer['password']
-credentials = UsernamePasswordCredentials(username, password)
+if tfsServer['authenticationMethod'] == 'Ntlm':
+    if domain is None:
+        domain = tfsServer['domain']
+    credentials = NTCredentials(username, domain, password)
+else:
+    credentials = UsernamePasswordCredentials(username, password)
 
 tpc = TFSTeamProjectCollection(URIUtils.newURI(collectionUrl), credentials)
 
