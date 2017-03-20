@@ -86,6 +86,16 @@ Unzip native.zip in the <xl-release-server>/conf directory.
 
 ### Example configuration, TFPT
 
+
+**Shared Configuration**
+
+You can specify the URL for your TFS Server, Username , password , domain. Then you can specify the authentication type as Basic or NTLM dependening on the type of account you are using.
+The Depending on whether you are using TFSSDK( for TFS 2010-2013) or TFSREST API (2015), you can specify the value in dropdown. This will help to test the connection to target. Doesn't do test connection for CLI.
+
+![screenshot of shared Configuration](images/xlr-tfs2013-plugin-010.png)
+
+**Task Usage**
+
 Here is a basic workflow of four items to create a Work Item, then retrieve it, update it, and retrieve it again to see the modification.
 
 ![screenshot of release template](images/xlr-tfs2013-plugin-1.png)
