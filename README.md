@@ -19,7 +19,7 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
-+ Additional config (when using sdk): https://www.microsoft.com/en-us/download/details.aspx?id=22616
++ Additional config (when using sdk or to run "Test Connection" for the REST API): https://www.microsoft.com/en-us/download/details.aspx?id=22616
   For configuration see this [section](https://github.com/xebialabs-community/xlr-tfs-plugin#tfs-sdk)
 
 
@@ -64,6 +64,7 @@ This plugin offers an interface from XL Release to Team Foundation Server via th
 
 The functionality will be enriched with additional Work Item fields as specific needs materialize.
 
+To test the connection on the Shared Configuration screen, you will need the SDK set up. 
 
 ## TFS SDK
 
