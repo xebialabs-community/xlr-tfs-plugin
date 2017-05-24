@@ -1,4 +1,4 @@
-# xlr-tfs-plugin
+# XL Release TFS plugin
 
 This plugin offers an interface from XL Release to Team Foundation Server to create, update and retrieve Work Items. 
 
@@ -9,6 +9,9 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 [![Build Status][xlr-tfs-plugin-travis-image]][xlr-tfs-plugin-travis-url]
 [![Codacy Badge][xlr-tfs-plugin-codacy-image] ][xlr-tfs-plugin-codacy-url]
 [![Code Climate][xlr-tfs-plugin-code-climate-image] ][xlr-tfs-plugin-code-climate-url]
+[![License: MIT][xlr-tfs-plugin-license-image]][xlr-tfs-plugin-license-url]
+![Github All Releases][xlr-tfs-plugin-downloads-image]
+
 
 [xlr-tfs-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xlr-tfs-plugin.svg?branch=master
 [xlr-tfs-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xlr-tfs-plugin
@@ -16,6 +19,10 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 [xlr-tfs-plugin-codacy-url]: https://www.codacy.com/app/joris-dewinne/xlr-tfs-plugin
 [xlr-tfs-plugin-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xlr-tfs-plugin/badges/gpa.svg
 [xlr-tfs-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xlr-tfs-plugin
+[xlr-tfs-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xlr-tfs-plugin-license-url]: https://opensource.org/licenses/MIT
+[xlr-tfs-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xlr-tfs-plugin/total.svg
+
 
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
