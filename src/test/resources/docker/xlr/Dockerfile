@@ -1,4 +1,4 @@
-FROM xebialabs/xlr_dev_run:v6.1.0.1
+FROM xebialabs/xlr_dev_run:v7.0.1.1
 ADD resources/script.policy /opt/xlr/server/conf/script.policy
 
 WORKDIR /tmp
