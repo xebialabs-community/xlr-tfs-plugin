@@ -73,6 +73,14 @@ The functionality will be enriched with additional Work Item fields as specific 
 
 To test the connection on the Shared Configuration screen, you will need the SDK set up. 
 
+## TFS Triggers
+
+Using the REST API, the Plugin allows you to poll TFS repositories and trigger XL Release on changes. 
+
+**GitCommitTrigger.py** -- Given a Collection, Project, Repo and Branch, will trigger a release if the latest commit ID changes. 
+
+**TfvcChangesetTrigger.py** -- Given a Collection and Project, will trigger a release if the latest changeset ID changes. 
+
 ## TFS SDK
 
 The TFS SDK depends on the following configuration changes in XL Release:

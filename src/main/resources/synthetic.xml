@@ -125,5 +125,31 @@
         <property name="buildNumber" kind="integer" category="output" />
         <property name="buildStatus" kind="string" category="output" />
     </type>
+    
+    <!-- TFS Triggers -->
+    
+    <type type="tfsrest.GitCommitTrigger" label="TFS: Git Commit Poll" extends="xlrelease.ReleaseTrigger">
+        <property name="tfsServer" category="Repository" label="Server" referenced-type="tfs.Server" kind="ci" description="TFS Server to poll"/>
+        <property name="collection" category="Repository" required="true" default="DefaultCollection" description="Collection you wish to target" />
+        <property name="project" category="Repository" required="true" description="Project you wish to target" />
+        <property name="repository" category="Repository" required="true" description="Repository you wish to target" />
+        <property name="branch" category="Repository" required="true" default="master" description="Git branch to poll" />
+        <property name="username" category="Repository" default="" required="true" description="Username used to connect to the repository"/>
+        <property name="password" category="Repository" default="" required="true" password="true" description="Password used to connect to the repository"/>
+        <property name="domain" category="Repository" default="" required="true" description="Domain for NTLM Authentication"/>
+
+        <property name="commitId" category="variables" required="false" description="SHA1 hash of the commit that triggered the release"/>
+    </type>
+
+    <type type="tfsrest.TfvcChangesetTrigger" label="TFS: TFVC Commit Poll" extends="xlrelease.ReleaseTrigger">
+        <property name="tfsServer" category="Repository" label="Server" referenced-type="tfs.Server" kind="ci" description="TFS Server to poll"/>
+        <property name="collection" category="Repository" required="true" default="DefaultCollection" description="Collection you wish to target" />
+        <property name="project" category="Repository" required="true" description="Project you wish to target" />
+        <property name="username" category="Repository" default="" required="true" description="Username used to connect to the repository"/>
+        <property name="password" category="Repository" default="" required="true" password="true" description="Password used to connect to the repository"/>
+        <property name="domain" category="Repository" default="" required="true" description="Domain for NTLM Authentication"/>
+
+        <property name="changesetId" category="variables" required="false" description="Changeset ID of the commit that triggered the release"/>
+    </type>
 
 </synthetic>
