@@ -16,7 +16,7 @@ if tfsServer is None:
   sys.exit(1)
 
 request = HttpRequest(tfsServer, username, password, domain)
-url = "%s/%s/_apis/tfvc/changesets?api-version=1.0" % (collection,project) 
+url = "%s/%s/_apis/tfvc/changesets?api-version=1.0" % (collection,project)
 
 response = request.get(url)
 
