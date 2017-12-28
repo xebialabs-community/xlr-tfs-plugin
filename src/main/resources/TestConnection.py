@@ -26,8 +26,8 @@ if configuration.preferredLibType == 'REST':
     # do an http request to the server
     response = HttpRequest(params).get('/_apis/projectcollections', contentType = 'application/json')
     
-    print "Response from TFS: [%s]" % response.getResponse()
-    print "Response status: [%s]" % response.status
+    logger.info("Response from TFS: [%s]" % response.getResponse())
+    logger.info("Response status: [%s]" % response.status)
 
     # check response status code, if is different than 200 exit with error code
     if response.status != 200:
