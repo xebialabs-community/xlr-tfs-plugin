@@ -10,7 +10,7 @@
 
 import sys
 from xlrhttp.HttpRequest import HttpRequest
-import os
+import os;
 from java.lang import System
 from com.microsoft.tfs.core.httpclient import UsernamePasswordCredentials
 from com.microsoft.tfs.core.httpclient import NTCredentials
@@ -25,6 +25,9 @@ if configuration.preferredLibType == 'REST':
 
     # do an http request to the server
     response = HttpRequest(params).get('/_apis/projectcollections', contentType = 'application/json')
+    
+    print "Response from TFS: [%s]" % response.getResponse()
+    print "Response status: [%s]" % response.status
 
     # check response status code, if is different than 200 exit with error code
     if response.status != 200:
