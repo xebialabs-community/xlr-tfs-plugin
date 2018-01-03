@@ -1,11 +1,4 @@
 # XL Release TFS plugin
-
-This plugin offers an interface from XL Release to Team Foundation Server to create, update and retrieve Work Items. 
-
-Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the TFS SDK.
-
-## CI status ##
-
 [![Build Status][xlr-tfs-plugin-travis-image]][xlr-tfs-plugin-travis-url]
 [![Codacy Badge][xlr-tfs-plugin-codacy-image] ][xlr-tfs-plugin-codacy-url]
 [![Code Climate][xlr-tfs-plugin-code-climate-image] ][xlr-tfs-plugin-code-climate-url]
@@ -24,31 +17,54 @@ Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the 
 [xlr-tfs-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xlr-tfs-plugin/total.svg
 
 
+## Preface
+
+This document describes the functionality provided by the XL Deploy|Release Description|Interface plugin.
+
+See the [XL Release reference manual](https://docs.xebialabs.com/xl-release) for background information on XL Release and release automation concepts.  
+
+## Overview
+
+This plugin offers an interface from XL Release to Team Foundation Server to create, update and retrieve Work Items. 
+
+Various APIs are supported:  Team Foundation Power Tools, TFS REST API, and the TFS SDK.
+
+## Requirements
+
+* XL Release [7.0 - 7.2]
+
+This community-supported version was developed for versions of XL Release 7.2 and lower and for TFS versions 2013 and 2015.  
+
+Note:  XebiaLabs has released an officially supported plugin, xlr-vsts-tfs-plugin-7.5.1.  See the documentation at <https://docs.xebialabs.com/xl-release/how-to/using-the-xl-release-vsts-tfs-plugin.html>.  Contact XebiaLabs for download information.
+  
+
 ## Installation ##
 + The plugin https://github.com/xebialabs-community/xlr-tfs-plugin/releases should be placed under `plugins`.
 + Additional config (when using sdk or to run "Test Connection" for the REST API): https://www.microsoft.com/en-us/download/details.aspx?id=22616
   For configuration see this [section](https://github.com/xebialabs-community/xlr-tfs-plugin#tfs-sdk)
 
 
-## Team Foundation Power Tools
+## Usage
+
+### Team Foundation Power Tools
 The following actions are supported:
 
-### CreateWorkItem
+#### CreateWorkItem
 The CreateWorkItem.py script creates a new Work Item by executing a remote Windows batch wrapper script, CreateWorkItems.bat.  Input parameters are Project, Type, Collection, Title, AssignedTo, and Description; the script returns the number of the Work Item created.  
 
 ![screenshot of createWorkItem](images/xlr-tfs2013-plugin-2.png)
 
-### GetWorkItem
+#### GetWorkItem
 The GetWorkItem.py script retrieves a Work Item given its number and collection using the GetWorkItem.bat wrapper script.  Input parameters are workItemNumber and collection.
 
 ![screenshot of getWorkItem](images/xlr-tfs2013-plugin-3.png)
 
-### UpdateWorkItem
+#### UpdateWorkItem
 The UpdateWorkItem.py script updates a Work Item given its number, collection, and set of update fields and values in the format `fieldname1=value1;fieldname2=value2`.  See an example of setting `State=Done` at the end of this document.
 
 ![screenshot of updateWorkItem](images/xlr-tfs2013-plugin-4.png)
 
-### Notes:  
+#### Notes:  
 The TFS machine must have Microsoft Visual Studio Team Foundation Server 2013 Update 2 Power Tools installed.  
 
 The CreateWorkItem.bat, GetWorkItem.bat, and UpdateWorkItem.bat scripts must be placed in a location on the TFS machine.  The default location is C:\xlr-tfs2013-plugin.
@@ -57,7 +73,7 @@ A field is provided for the Windows CIFS port (default is 445) to allow overridi
 
 The functionality will be enhanced as specific needs materialize.
 
-## TFS REST API
+### TFS REST API
 
 This plugin offers an interface from XL Release to Team Foundation Server via the REST API valid for work items in TFS 2015.  It provides:
 
@@ -73,7 +89,7 @@ The functionality will be enriched with additional Work Item fields as specific 
 
 To test the connection on the Shared Configuration screen, you will need the SDK set up. 
 
-## TFS Triggers
+### TFS Triggers
 
 Using the REST API, the Plugin allows you to poll TFS repositories and trigger XL Release on changes. 
 
@@ -81,7 +97,7 @@ Using the REST API, the Plugin allows you to poll TFS repositories and trigger X
 
 **TfvcChangesetTrigger.py** -- Given a Collection and Project, will trigger a release if the latest changeset ID changes. 
 
-## TFS SDK
+### TFS SDK
 
 The TFS SDK depends on the following configuration changes in XL Release:
 
